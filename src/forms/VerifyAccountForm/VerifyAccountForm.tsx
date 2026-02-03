@@ -25,7 +25,7 @@ const VerifyAccountForm = () => {
 
     const newOtp = [...formik.values.code];
     newOtp[index] = value;
-    formik.setFieldValue("otp", newOtp);
+    formik.setFieldValue("code", newOtp);
 
     // Focus next input if value is filled
     if (value && index < 5) {
