@@ -2,7 +2,7 @@ import titleSectionBg from "../assets/images/title_section.png";
 
 const TitleSection = () => {
   return (
-    <section className="grid justify-center items-center text-center contain min-h-full py-4 h-[20vh] relative">
+    <section className="grid justify-center items-center text-center contain min-h-full h-75 relative">
       <div
         className="bg-center bg-cover bg-no-repeat absolute left-0 top-0 w-full h-full"
         style={{ backgroundImage: `url(${titleSectionBg.src})` }}

@@ -4,7 +4,7 @@ import AuthGuard from "@/src/components/AuthGuard";
 export default function Home() {
   return (
     <AuthGuard requireGuest>
-      <AuthenticationSection type={"register"} />
+      <AuthenticationSection type={"verify-account"} />
     </AuthGuard>
   );
 }

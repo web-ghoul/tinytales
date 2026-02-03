@@ -7,6 +7,7 @@ const useRegisterSchema = () => {
     mobile_country_code: "",
     mobile: "",
     password: "",
+    password_confirmation: "",
   };
 
   const validationSchema = Yup.object().shape({
@@ -25,6 +26,9 @@ const useRegisterSchema = () => {
         "Password must contain at least one special character",
       )
       .required("Password is required"),
+    password_confirmation: Yup.string()
+      .oneOf([Yup.ref("password"), undefined], "Passwords must match")
+      .required("Confirm Password is required"),
   });
 
   return { initialValues, validationSchema };

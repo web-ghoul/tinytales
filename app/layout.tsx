@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
-        {children}
+        <main className="grid justify-stretch items-center content-start min-h-screen">
+          {children}
+        </main>
+        <Toaster richColors />
       </body>
     </html>
   );

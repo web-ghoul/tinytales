@@ -10,7 +10,7 @@ import useRegisterSubmit from "./useRegisterSubmit";
 
 const RegisterForm = () => {
   const { initialValues, validationSchema } = useRegisterSchema();
-  const { handleSubmit } = useRegisterSubmit();
+  const { handleSubmit, loading } = useRegisterSubmit();
 
   const formik = useFormik({
     initialValues,
@@ -119,8 +119,26 @@ const RegisterForm = () => {
                 : ""
             }
           />
+          <InputBox
+            id="password_confirmation"
+            name="password_confirmation"
+            label="Confirm Password"
+            placeholder="............"
+            type="password"
+            value={formik.values.password_confirmation}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={
+              formik.touched.password_confirmation &&
+              formik.errors.password_confirmation
+                ? formik.errors.password_confirmation
+                : ""
+            }
+          />
 
-          <Button type="submit">Sign up</Button>
+          <Button type="submit" loading={loading}>
+            Sign up
+          </Button>
 
           <div className="text-center text-sm text-gray-600">
             Already have an account?{" "}

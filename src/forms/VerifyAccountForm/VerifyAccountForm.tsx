@@ -9,7 +9,8 @@ import { useRef } from "react";
 
 const VerifyAccountForm = () => {
   const { initialValues, validationSchema } = useVerifySchema();
-  const { handleSubmit } = useVerifySubmit();
+  const { handleSubmit, loading, handleResendCode, resendLoading } =
+    useVerifySubmit();
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const formik = useFormik({
@@ -59,7 +60,6 @@ const VerifyAccountForm = () => {
               We sent a verification code to your mobile. Enter the code from
               the mobile in the field below.
             </p>
-            <span className="text-sm font-bold text-gray-700">******97</span>
           </div>
         </div>
 
@@ -101,13 +101,20 @@ const VerifyAccountForm = () => {
             )}
           </div>
 
-          <Button type="submit">Verify my account</Button>
+          <Button type="submit" loading={loading}>
+            Verify my account
+          </Button>
 
           <div className="text-center text-sm text-gray-600 font-poppins">
             Didn't get the code?{" "}
-            <a href="#" className="text-primary font-semibold hover:underline">
-              Resend
-            </a>
+            <button
+              type="button"
+              onClick={() => handleResendCode()}
+              disabled={resendLoading}
+              className={`text-primary font-semibold hover:underline bg-transparent border-none p-0 cursor-pointer ${resendLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+            >
+              {resendLoading ? "Sending..." : "Resend"}
+            </button>
           </div>
         </div>
       </form>

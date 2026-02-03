@@ -1,6 +1,10 @@
-"use client";
 import AuthenticationSection from "@/src/sections/AuthenticationSection";
+import AuthGuard from "@/src/components/AuthGuard";
 
 export default function Login() {
-  return <AuthenticationSection type="login" />;
+  return (
+    <AuthGuard requireGuest>
+      <AuthenticationSection type="login" />
+    </AuthGuard>
+  );
 }

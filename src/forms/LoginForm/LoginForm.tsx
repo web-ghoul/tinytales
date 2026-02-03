@@ -1,16 +1,16 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import logo from "../../assets/images/logo.png";
 import Button from "../../components/Button";
 import InputBox from "../../components/InputBox";
 import { useFormik } from "formik";
 import useLoginSchema from "./useLoginSchema";
 import useLoginSubmit from "./useLoginSubmit";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "../../assets/images/logo.png";
 
 const LoginForm = () => {
   const { initialValues, validationSchema } = useLoginSchema();
-  const { handleSubmit } = useLoginSubmit();
+  const { handleSubmit, loading } = useLoginSubmit();
 
   const formik = useFormik({
     initialValues,
@@ -70,9 +70,9 @@ const LoginForm = () => {
             }
           />
 
-          {/* Remember Me */}
-
-          <Button type="submit">Sign in</Button>
+          <Button type="submit" loading={loading}>
+            Sign in
+          </Button>
 
           <div className="text-center text-sm text-gray-600">
             New on our platform?{" "}

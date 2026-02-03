@@ -11,6 +11,7 @@ interface RegisterFormValues {
   mobile_country_code: string;
   mobile: string;
   password: string;
+  password_confirmation: string;
 }
 
 interface VerifyAccountFormValues {

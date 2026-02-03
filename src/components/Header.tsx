@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../assets/images/logo.png";
 import CartIcon from "../Icons/CartIcon";
 import ChevronDownIcon from "../Icons/ChevronDownIcon";
@@ -21,10 +22,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-white border-b border-gray-100 contain flex items-center justify-between sticky top-0 z-50 font-poppins h-24">
+    <header className="w-full bg-white border-b border-gray-100 contain flex items-center justify-between sticky top-0 z-50 font-poppins h-22">
       <div className="flex justify-start items-center gap-16">
         {/* Logo Section */}
-        <Image src={logo} alt="Tinytales Logo" />
+        <Link href="/">
+          <Image src={logo} alt="Tinytales Logo" />
+        </Link>
 
         {/* Navigation Links */}
         <nav className="hidden lg:flex items-center gap-8">
