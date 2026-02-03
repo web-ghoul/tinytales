@@ -2,25 +2,34 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --text: #000;
+  --primary: #BE968E;
+  --secondary: #F5F5F5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+
+  --breakpoint-desktop: 1440px;
+  --breakpoint-laptop: 1200px;
+  --breakpoint-tablet: 992px;
+  --breakpoint-mobile: 768px;
+  --breakpoint-small: 520px;
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.contain {
+  padding-left: 120px !important;
+  padding-right: 120px !important;
 }
