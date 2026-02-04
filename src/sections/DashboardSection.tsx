@@ -1,19 +1,19 @@
 "use client";
-import useAuth from "../hooks/useAuth";
-import Button from "../components/Button";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../assets/images/logo.png";
+import Button from "../components/Button";
+import useAuth from "../hooks/useAuth";
 
 const DashboardSection = () => {
   const { user, loading, logout } = useAuth();
 
   return (
-    <section className="contain py-20 min-h-screen flex flex-col items-center justify-center text-center justify-center">
+    <section className="contain py-20 max-laptop:p-16 max-tablet:p-12 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white p-12 rounded-2xl border border-gray-100 shadow-md max-w-2xl w-full grid gap-8">
         <div className="grid gap-3">
           <Image src={logo} alt={"logo"} className="m-auto" />
-          <h1 className="text-4xl font-bold text-black">
+          <h1 className="text-4xl max-tablet:text-3xl font-bold text-black">
             Welcome,{" "}
             <span className="text-primary">{user?.name || "User"}</span>
           </h1>
