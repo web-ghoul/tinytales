@@ -21,17 +21,17 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={loading}
-      className={`relative flex items-center justify-center gap-2 ${
+      className={`relative flex items-center justify-center gap-2 max-tablet:gap-1 ${
         variant === "primary"
           ? "bg-primary text-white hover:bg-primary/75"
           : "bg-secondary text-primary hover:bg-primary/50"
       } px-8 py-3 rounded-xl text-sm font-bold transition-all duration-200 ${
         loading ? "cursor-not-allowed opacity-80" : "cursor-pointer"
-      } ${className}`}
+      } ${className} max-laptop:px-6 max-mobile:px-5 max-mobile:py-2 max-mobile:rounded-lg`}
     >
       {loading && <Loader2 className="animate-spin h-5 w-5" />}
       <span
-        className={`${loading ? "opacity-90" : ""} flex items-center justify-center gap-2 `}
+        className={`${loading ? "opacity-90" : ""} flex items-center justify-center gap-2 max-tablet:gap-1`}
       >
         {children}
       </span>

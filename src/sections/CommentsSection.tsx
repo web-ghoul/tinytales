@@ -5,7 +5,9 @@ import CommentCard from "../components/CommentCard";
 
 const CommentsSection = () => {
   return (
-    <section className={`grid justify-stretch items-center gap-8 contain py-6`}>
+    <section
+      className={`grid justify-stretch items-center gap-8 contain py-6 max-laptop:gap-7 max-tablet:gap-6 max-mobile:gap-4 max-tablet:py-4 max-mobile:py-3`}
+    >
       <CommentCard />
       <hr className="border-gray-300" />
       <CommentCard />
@@ -21,7 +23,7 @@ const CommentsSection = () => {
           src={bg}
           alt={"comment background"}
           width={100}
-          className="absolute left-0 -bottom-10"
+          className="absolute left-0 bottom-0"
         />
       </div>
     </section>

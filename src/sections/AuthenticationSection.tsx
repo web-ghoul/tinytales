@@ -1,4 +1,3 @@
-import React from "react";
 import Forms from "../forms/Forms";
 
 const AuthenticationSection = ({ type }: { type: FormType }) => {
@@ -6,10 +5,12 @@ const AuthenticationSection = ({ type }: { type: FormType }) => {
     "https://tinytales.trendline.marketing/assets/img/illustrations/auth-login-illustration-light.png";
 
   return (
-    <div className={`grid grid-cols-[60%_1fr] min-h-screen p-8`}>
+    <div
+      className={`grid grid-cols-[60%_1fr] max-laptop:grid-cols-2 max-tablet:grid-cols-1 min-h-screen p-8 max-laptop:p-7 max-tablet:p-6`}
+    >
       {/* Left Side: Illustration */}
       <div
-        className={`w-full items-center flex justify-center p-12 bg-[#F8F7FA] rounded-2xl`}
+        className={`w-full items-center flex justify-center p-12 bg-[#F8F7FA] rounded-2xl max-laptop:rounded-xl max-laptop:p-10 max-tablet:hidden`}
       >
         <img
           src={illustration}

@@ -4,8 +4,8 @@ import { GALLERIES } from "../constants";
 
 const ProductSection = () => {
   return (
-    <section className="contain py-12">
-      <div className="grid grid-cols-[30%_1fr] gap-12">
+    <section className="contain">
+      <div className="grid grid-cols-[30%_1fr] max-laptop:grid-cols-2 max-tablet:grid-cols-1 gap-12 max-tablet:gap-10 max-mobile:gap-8">
         {/* Left Column: Gallery */}
         <ProductImageGallery images={GALLERIES} />
 

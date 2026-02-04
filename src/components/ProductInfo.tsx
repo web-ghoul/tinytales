@@ -1,9 +1,9 @@
 "use client";
 import { ChevronDown, Minus, Plus, ShoppingBag } from "lucide-react";
 import { useState } from "react";
-import Button from "./Button";
-import LoveIcon from "../Icons/LoveIcon";
 import CartIcon from "../Icons/CartIcon";
+import LoveIcon from "../Icons/LoveIcon";
+import Button from "./Button";
 
 const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
@@ -53,7 +53,7 @@ const ProductInfo = () => {
       </div>
 
       {/* Title */}
-      <h1 className="text-3xl font-semibold text-gray-900 leading-tight mb-4">
+      <h1 className="text-3xl max-tablet:text-2xl max-mobile:text-xl font-semibold text-gray-900 leading-tight mb-4 max-mobile:mb-3">
         J.VER Man Shirts Solid Long Sleeve Stretch Wrinkle-Free With Blue
       </h1>
 
@@ -67,7 +67,7 @@ const ProductInfo = () => {
       </p>
 
       {/* Description */}
-      <p className="text-gray-600 text-sm leading-relaxed mb-8 max-w-[90%]">
+      <p className="text-gray-600 text-sm leading-relaxed mb-8 max-tablet:mb-7 max-mobile:mb-6 max-w-[90%]">
         Lorem ipsum dolor sit, consectetuer adipiscing elit, sed diam nonummy
         Lorem ipsum dolor sit amet, diam nonummy
       </p>
@@ -79,10 +79,10 @@ const ProductInfo = () => {
           <label className="absolute -top-2 left-3 bg-white px-1 text-xs font-medium text-gray-800 z-10">
             Type
           </label>
-          <div className="relative">
+          <div className="relative w-fit">
             <select
               title={""}
-              className="w-75 border border-gray-200 rounded-xl px-4 py-3 text-sm font-medium appearance-none focus:outline-none focus:border-[#D29F92] cursor-pointer bg-white text-gray-800"
+              className="w-75 max-laptop:w-72 max-tablet:w-70 max-mobile:60 border border-gray-200 rounded-xl max-tablet:rounded-lg max-mobile:rounded-md px-4 py-3 max-laptop:px-3 max-laptop:py-2.5 max-mobile:px-2.5 max-mobile:py-2 text-sm max-tablet:text-xs max-tab font-medium appearance-none focus:outline-none focus:border-[#D29F92] cursor-pointer bg-white text-gray-800"
             >
               <option>Cotton</option>
               <option>Polyester</option>
@@ -100,10 +100,10 @@ const ProductInfo = () => {
           <label className="absolute -top-2 left-3 bg-white px-1 text-xs font-medium text-gray-800 z-10">
             Size
           </label>
-          <div className="relative">
+          <div className="relative w-fit">
             <select
               title={""}
-              className="w-75 border border-gray-200 rounded-xl px-4 py-3 text-sm font-medium appearance-none focus:outline-none focus:border-[#D29F92] cursor-pointer bg-white text-gray-800"
+              className="w-75 max-laptop:w-72 max-tablet:w-70 max-mobile:60 border border-gray-200 rounded-xl max-tablet:rounded-lg max-mobile:rounded-md px-4 py-3 max-laptop:px-3 max-laptop:py-2.5 max-mobile:px-2.5 max-mobile:py-2 text-sm max-tablet:text-xs font-medium appearance-none focus:outline-none focus:border-[#D29F92] cursor-pointer bg-white text-gray-800"
             >
               <option>2XL</option>
               <option>XL</option>
@@ -152,13 +152,13 @@ const ProductInfo = () => {
         </div>
       </div>
 
-      <div className="flex items-center gap-6 mt-4">
+      <div className="flex flex-wrap items-center gap-6 mt-4 max-laptop:gap-5 max-tablet:gap-4 max-tablet:grid max-tablet:grid-cols-2">
         {/* Quantity Counter */}
-        <div className="flex items-center gap-4 bg-[#F9F9F9] rounded-xl px-2 h-12">
+        <div className="flex items-center justify-between gap-4 bg-[#F9F9F9] rounded-xl px-2 h-12 max-tablet:px-1.5 max-tablet:h-11 max-mobile:rounded-lg max-mobile:gap-3">
           <button
             title={""}
             onClick={handleDecrement}
-            className="flex items-center justify-center text-gray-400 hover:text-black cursor-pointer transition-colors w-10 h-10 bg-white rounded-xl"
+            className="flex items-center justify-center text-gray-400 hover:text-black cursor-pointer transition-colors w-10 h-10  max-laptop:w-9 max-laptop:h-9 max-mobile:w-8 max-mobile:h-8 bg-white rounded-xl max-tablet:rounded-md max-mobile:rounded-sm"
           >
             <Minus size={16} />
           </button>
@@ -168,19 +168,19 @@ const ProductInfo = () => {
           <button
             title={""}
             onClick={handleIncrement}
-            className="w-10 h-10 bg-white rounded-xl flex items-center justify-center cursor-pointer text-black hover:text-black transition-colors"
+            className="w-10 h-10 max-laptop:w-9 max-laptop:h-9 max-tablet:w-8 max-tablet:h-8 bg-white rounded-xl max-tablet:rounded-md max-mobile:rounded-sm flex items-center justify-center cursor-pointer text-black hover:text-black transition-colors"
           >
             <Plus size={16} />
           </button>
         </div>
 
         {/* Total Price */}
-        <span className="text-2xl font-semibold text-gray-900 min-w-25">
+        <span className="text-2xl font-semibold text-gray-900 min-w-25 max-tablet:min-w-full max-mobile:text-xl">
           ${(300 * quantity).toFixed(2)}
         </span>
 
         {/* Add to Cart Button */}
-        <Button>
+        <Button className="col-span-2">
           Add To Cart
           <ShoppingBag size={16} />
         </Button>

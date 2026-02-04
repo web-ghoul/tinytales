@@ -4,7 +4,7 @@ import VerifyAccountForm from "./VerifyAccountForm/VerifyAccountForm";
 
 const Forms = ({ type }: { type: FormType }) => {
   return (
-    <div className="flex flex-1">
+    <div className="flex flex-1 max-tablet:justify-center max-tablet:items-center">
       {type === "login" ? (
         <LoginForm />
       ) : type == "register" ? (

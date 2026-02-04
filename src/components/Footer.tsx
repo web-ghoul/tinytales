@@ -11,18 +11,18 @@ import Button from "./Button";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-[#3D342C] text-white pt-20 pb-10 contain overflow-hidden">
+    <footer className="relative w-full bg-[#3D342C] text-white pt-20 pb-10 max-laptop:pt-16 max-tablet:pt-14 max-mobile:pt-12 max-laptop:pb-9 max-tablet:pb-8 max-mobile:pb-6 contain overflow-hidden">
       {/* Background Image Overlay */}
       <div
         className="absolute inset-0 z-0 flex justify-center items-end opacity-20 pointer-events-none w-full h-full bg-cover bg-no-repeat bg-center"
         style={{ backgroundImage: `url(${footerBg.src})` }}
       ></div>
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <div className="relative z-10 grid grid-cols-4 max-laptop:grid-cols-2 max-mobile:grid-cols-1 gap-12 max-laptop:gap-8 max-tablet:gap-6">
         {/* Logo and Description */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 max-laptop:gap-5 max-tablet:gap-4 max-mobile:gap-3">
           <Image src={logo} alt="Tinytales Logo" />
-          <p className="text-[#D1D1D1] text-md leading-relaxed max-w-xs">
+          <p className="text-[#D1D1D1] text-md leading-relaxed max-w-xs max-mobile:text-sm">
             Ipsum in eos qui consequatur ab cum maxime. Soluta dolor quae Ipsum
             in eos qui consequatur ab .Soluta dolor quae Ipsum in eos
             quconsequatur ab cum maxime. Soluta dolor quae
@@ -30,13 +30,15 @@ const Footer = () => {
         </div>
 
         {/* Let Us Help */}
-        <div className="flex flex-col gap-6">
-          <h3 className="text-2xl font-bold">Let Us Help</h3>
-          <ul className="flex flex-col gap-3">
+        <div className="flex flex-col gap-6 max-laptop:gap-5 max-tablet:gap-4 max-mobile:gap-3">
+          <h3 className="text-2xl font-bold max-laptop:text-xl max-mobile:text-lg">
+            Let Us Help
+          </h3>
+          <ul className="flex flex-col gap-3 max-tablet:gap-2 max-mobile:gap-1">
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 My Account
               </a>
@@ -44,7 +46,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 FAQs
               </a>
@@ -52,7 +54,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 Categories
               </a>
@@ -60,7 +62,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 All Products
               </a>
@@ -69,13 +71,15 @@ const Footer = () => {
         </div>
 
         {/* Policies */}
-        <div className="flex flex-col gap-6">
-          <h3 className="text-2xl font-bold">Policies</h3>
-          <ul className="flex flex-col gap-3">
+        <div className="flex flex-col gap-6 max-laptop:gap-5 max-tablet:gap-4 max-mobile:gap-3">
+          <h3 className="text-2xl font-bold max-laptop:text-xl max-mobile:text-lg">
+            Policies
+          </h3>
+          <ul className="flex flex-col gap-3 max-tablet:gap-2 max-mobile:gap-1">
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 Refund Policy
               </a>
@@ -83,7 +87,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 About Us
               </a>
@@ -91,7 +95,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 Cancellation Policy
               </a>
@@ -99,7 +103,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 Terms and Conditions
               </a>
@@ -107,7 +111,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-[#D1D1D1] hover:text-white transition-colors text-md"
+                className="text-[#D1D1D1] hover:text-white transition-colors text-md max-mobile:text-sm"
               >
                 Privacy Policy
               </a>
@@ -116,22 +120,24 @@ const Footer = () => {
         </div>
 
         {/* Send Email & Socials */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 max-laptop:gap-6 max-tablet:gap-5 max-mobile:gap-4">
           <div className="flex flex-col gap-6">
-            <h3 className="text-2xl font-bold">Send Email</h3>
-            <div className="bg-white rounded-xl p-2 flex items-center justify-between shadow-lg">
+            <h3 className="text-2xl font-bold max-laptop:text-xl max-mobile:text-lg">
+              Send Email
+            </h3>
+            <div className="bg-white rounded-xl max-laptop:rounded-lg max-mobile:rounded-md p-2 flex items-center justify-between shadow-lg max-laptop:p-1.5 max-mobile:p-1 max-laptop:shadow-md max-mobile:shadow-sm">
               <input
                 type="email"
                 placeholder="Email address"
-                className="bg-transparent text-gray-800 px-4 py-2 outline-none text-sm w-full"
+                className="bg-transparent text-gray-800 px-4 py-2 outline-none text-sm w-full max-laptop:px-3 max-tablet:px-2.5 max-tablet:py-1.5"
               />
               <Button>Send</Button>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 max-tablet:gap-3 max-mobile:gap-2">
             <h4 className="text-md font-bold tracking-wider">Follow Us</h4>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 max-tablet:gap-3 max-mobile:gap-2">
               <a
                 href="#"
                 target="_blank"

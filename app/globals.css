@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --text: #000;
-  --primary: #BE968E;
-  --secondary: #F5F5F5;
+  --primary: #be968e;
+  --secondary: #f5f5f5;
 }
 
 @theme inline {
@@ -33,4 +33,66 @@ body {
 .contain {
   padding-left: 120px !important;
   padding-right: 120px !important;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+  border: 2px solid var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a87d74; /* Slightly darker shade of primary */
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--secondary);
+}
+
+@media (max-width: 1440px) {
+  .contain {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contain {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .contain {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contain {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .contain {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }

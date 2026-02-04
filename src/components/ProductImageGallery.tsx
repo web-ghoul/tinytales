@@ -23,9 +23,9 @@ const ProductImageGallery = ({ images }: ProductImageGalleryProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 max-tablet:gap-3">
       {/* Main Image Container */}
-      <div className="relative aspect-square bg-[#F9F9F9] rounded-3xl overflow-hidden group flex justify-center items-center bg-linear-to-b from-[#000000]/30 from-5% to-[#F4F4F4]/20 to-40%">
+      <div className="relative aspect-square bg-[#F9F9F9] rounded-3xl max-tablet:rounded-2xl max-mobile:rounded-xl overflow-hidden group flex justify-center items-center bg-linear-to-b from-[#000000]/30 from-5% to-[#F4F4F4]/20 to-40%">
         <Image
           src={images[currentIndex]}
           alt={`Product View ${currentIndex + 1}`}
@@ -64,12 +64,12 @@ const ProductImageGallery = ({ images }: ProductImageGalleryProps) => {
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+      <div className="flex gap-4 max-tablet:gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {images.slice(0, 3).map((img, idx) => (
           <button
             key={idx}
             onClick={() => selectImage(idx)}
-            className={`relative w-24 h-24 rounded-2xl bg-[#F9F9F9] overflow-hidden cursor-pointer border-2 transition-all shrink-0 ${
+            className={`relative w-24 h-24 max-laptop:w-22 max-laptop:h-22 max-tablet:w-20 max-tablet:h-20 max-mobile:h-18 rounded-2xl max-tablet:rounded-xl max-mobile:rounded-lg bg-[#F9F9F9] overflow-hidden cursor-pointer border-2 transition-all shrink-0 ${
               currentIndex === idx ? "border-[#B0897F]" : "border-transparent"
             }`}
           >
@@ -84,7 +84,13 @@ const ProductImageGallery = ({ images }: ProductImageGalleryProps) => {
 
         {/* Extra Images Indicator */}
         {images.length > 3 && (
-          <button className="relative w-24 h-24 rounded-2xl bg-[#333333] overflow-hidden border-2 border-transparent shrink-0 flex items-center justify-center text-white text-xl font-bold">
+          <button className="relative w-24 h-24 max-laptop:w-22 max-laptop:h-22 max-tablet:w-20 max-tablet:h-20 max-mobile:w-18 max-mobile:h-18 rounded-2xl max-tablet:rounded-xl max-mobile:rounded-lg bg-[#333333]/75 overflow-hidden border-2 border-transparent shrink-0 flex items-center justify-center text-white text-xl font-bold">
+            <Image
+              src={images[images.length - 1]}
+              alt={`Thumbnail ${images.length + 1}`}
+              fill
+              className="object-contain p-2 mix-blend-multiply absolute z-[-1]"
+            />
             +{images.length - 3}
           </button>
         )}

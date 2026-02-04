@@ -1,10 +1,10 @@
 "use client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper";
 
 const Slider = ({ children }: { children: React.ReactNode }) => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
