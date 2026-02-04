@@ -1,3 +1,4 @@
+import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../assets/images/logo.png";
@@ -22,15 +23,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-white border-b border-gray-100 contain flex items-center justify-between sticky top-0 z-50 font-poppins h-22">
-      <div className="flex justify-start items-center gap-16">
+    <header className="w-full bg-white border-b border-gray-100 contain flex items-center justify-between sticky top-0 z-50 font-poppins h-22 max-laptop:h-20 max-tablet:h-18">
+      <div className="flex justify-start items-center gap-16 max-laptop:gap-10 max-tablet:gap-8">
         {/* Logo Section */}
         <Link href="/">
           <Image src={logo} alt="Tinytales Logo" />
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="flex items-center gap-8 max-laptop:gap-6 max-tablet:gap-2 max-tablet:hidden">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -47,7 +48,7 @@ const Header = () => {
       </div>
 
       {/* Action Icons Section */}
-      <div className="flex items-center gap-5 text-gray-700">
+      <div className="flex items-center gap-5 max-laptop:gap-4 max-tablet:gap-3 text-gray-700 max-tablet:hidden">
         <button
           title={""}
           className="hover:text-[#A67C52] cursor-pointer transition-colors relative"
@@ -79,6 +80,13 @@ const Header = () => {
           <ChevronDownIcon />
         </div>
       </div>
+
+      <button
+        title={""}
+        className="hover:text-[#A67C52] cursor-pointer transition-colors relative hidden max-tablet:flex"
+      >
+        <MenuIcon />
+      </button>
     </header>
   );
 };

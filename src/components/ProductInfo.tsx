@@ -126,12 +126,12 @@ const ProductInfo = () => {
           {colors.map((color) => (
             <div
               key={color.name}
-              className={`bg-[#F4F7F9] p-3 rounded-full ${selectedColor === color.name ? "ring-2 ring-gray-500" : ""}`}
+              className={`bg-[#F4F7F9] p-3 max-tablet:p-2.5 max-mobile:p-2 rounded-full ${selectedColor === color.name ? "ring-2 ring-gray-500" : ""}`}
             >
               <button
                 title={color.name}
                 onClick={() => setSelectedColor(color.name)}
-                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all border-2 cursor-pointer border-white`}
+                className={`w-8 h-8 max-tablet:w-7 max-tablet:h-7 max-mobile:w-6 max-mobile:h-6 rounded-full flex items-center justify-center transition-all border-2 cursor-pointer border-white`}
                 style={{ backgroundColor: color.hex }}
                 aria-label={`Select ${color.name}`}
               ></button>
